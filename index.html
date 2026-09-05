@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarvexa - Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                🏥 <span>Aarvexa</span>
+            </div>
+
+            <nav>
+                <a href="#" class="active">🏠 Dashboard</a>
+                <a href="#doctors">👨‍⚕️ Doctors</a>
+                <a href="#appointments">📅 Appointments</a>
+                <a href="#" onclick="showMedicines()">💊 Medicines</a>
+                <a href="#records">📋 Medical Records</a>
+                <a href="#" onclick="showNotifications()">🔔 Notifications</a>
+            </nav>
+
+            <div class="emergency">
+                <strong>🚨 Emergency</strong>
+                <p>Need immediate help?</p>
+                <button onclick="callEmergency()">Call Emergency</button>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <h1>Good Morning, Jatin 👋</h1>
+                    <p>Here's your health overview for today.</p>
+                </div>
+
+                <div class="profile">
+                    🔔 &nbsp; 👤 Jatin
+                </div>
+            </header>
+
+
+            <!-- Dashboard Cards -->
+            <section class="cards">
+
+                <div class="card appointment">
+                    <div class="card-icon">📅</div>
+                    <div>
+                        <p>Next Appointment</p>
+                        <h2>Dr. Ola</h2>
+                        <span>12 September • 10:00 AM</span>
+                    </div>
+                </div>
+
+                <div class="card medicine">
+                    <div class="card-icon">💊</div>
+                    <div>
+                        <p>Current Medicines</p>
+                        <h2>3 Medicines</h2>
+                        <span>Next dose: 2:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="card records">
+                    <div class="card-icon">📋</div>
+                    <div>
+                        <p>Medical Records</p>
+                        <h2>8 Records</h2>
+                        <span>Last updated recently</span>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Quick Actions -->
+            <section class="section">
+                <h2>Quick Actions</h2>
+                <div class="quick-actions">
+                    <button onclick="document.getElementById('appointments').scrollIntoView({behavior: 'smooth'})">📅 Book Appointment</button>
+                    <button onclick="document.getElementById('doctors').scrollIntoView({behavior: 'smooth'})">👨‍⚕️ Find a Doctor</button>
+                    <button onclick="showMedicines()">💊 View Medicines</button>
+                    <button onclick="document.getElementById('records').scrollIntoView({behavior: 'smooth'})">📋 Medical Records</button>
+                </div>
+            </section>
+
+
+            <!-- Upcoming Appointment -->
+            <section class="section">
+                <h2>Upcoming Appointment</h2>
+
+                <div class="appointment-box">
+
+                    <div class="doctor-avatar">
+                        👨‍⚕️
+                    </div>
+
+                    <div class="doctor-info">
+                        <h3>Dr. Neha Ola</h3>
+                        <p>Cardiologist • 12 years experience</p>
+                        <span>📅 12 September 2026 &nbsp; | &nbsp; 🕙 10:00 AM</span>
+                    </div>
+
+                    <button class="view-btn"onclick="showAppointmentDetails()">View Details</button>
+
+                </div>
+            </section>
+
+
+            <!-- Medicines -->
+            <section class="section" id="medicine">
+                <h2>Today's Medicines</h2>
+
+                <div class="medicine-list">
+
+                    <div class="medicine-item">
+                        <div>
+                            <h3>Calcium Dobesilate Casules 500mg</h3>
+                            <p>1 tablet • After breakfast</p>
+                        </div>
+                        <span class="status">Taken</span>
+                    </div>
+
+                    <div class="medicine-item">
+                        <div>
+                            <h3>Enalapril</h3>
+                            <p>1 tablet • After lunch</p>
+                        </div>
+                        <span class="status pending">2:00 PM</span>
+                    </div>
+
+                </div>
+            </section>
+<section class="section" id="records">
+    <h2>Medical Records</h2>
+
+    <div class="medicine-item">
+        <div>
+            <h3>Blood Test Report</h3>
+            <p>Uploaded on 05 September 2026</p>
+        </div>
+        <span class="status">Available</span>
+    </div>
+
+    <div class="medicine-item">
+        <div>
+            <h3>Cardiology Report</h3>
+            <p>Uploaded on 28 August 2026</p>
+        </div>
+        <span class="status">Available</span>
+    </div>
+</section>
+        
+
+     
+    <section class="section" id="doctors">
+    <h2>Our Doctors</h2>
+
+    <div class="doctor-card">
+        <div class="doctor-avatar">👩‍⚕️</div>
+
+        <div class="doctor-info">
+            <h3>Dr. Neha Ola</h3>
+            <p>Cardiologist • 12 years experience</p>
+            <p>MBBS, MD Cardiology</p>
+            <span>Available: Monday - Friday</span>
+        </div>
+
+        <button class="view-btn" onclick="document.getElementById('appointments').scrollIntoView({behavior: 'smooth'})">Book Appointment</button>
+    </div>
+</section>
+<section class="section" id="appointments">
+    <h2>Book an Appointment</h2>
+
+    <div class="appointment-form">
+        <label>Select Doctor</label>
+        <select>
+            <option>Dr. Neha Ola - Cardiologist</option>
+            <option>Dr. Ola - General Physician</option>
+        </select>
+
+        <label>Select Date</label>
+        <input type="date">
+
+        <label>Select Time</label>
+        <select>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>2:00 PM</option>
+            <option>4:00 PM</option>
+        </select>
+
+        <button class="book-btn">Book Appointment</button>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
